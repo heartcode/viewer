@@ -1,0 +1,1 @@
+var Viewer = Viewer || {};
