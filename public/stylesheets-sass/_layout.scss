@@ -1,0 +1,31 @@
+body, html {
+  background: $app_bg_colour;
+}
+
+.gallery_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @extend .full_browser_size;
+
+  .top_pattern {
+    background: url('/images/background-pattern.png');
+    position: absolute;
+    @extend .full_browser_size;
+  }
+
+  .gallery_images {
+    display: inline-block;
+    @extend .full_browser_size;
+    @extend .reset_box;
+    background: red;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      @extend .full_browser_size;
+      background: blue;
+      overflow: hidden;
+    }
+  }
+}

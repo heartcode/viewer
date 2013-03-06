@@ -18,6 +18,6 @@
 guard 'compass'
 
 guard :jammit do
-  watch(%r{^public/assets/javascripts/(.*)\.js$})
-  watch(%r{^public/assets/stylesheets/(.*)\.css$})
+  watch(%r{^public/javascripts/(.*)\.js$})
+  watch(%r{^public/stylesheets/(.*)\.css$})
 end

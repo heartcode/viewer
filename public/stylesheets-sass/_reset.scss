@@ -1,0 +1,15 @@
+@import "vendor/normalize";
+
+body, html {
+  background-color: #efefef;
+  color: #333;
+}
+
+.full_browser_size {
+  width: 100%;
+  height: 100%;
+}
+.reset_box {
+  margin: 0;
+  padding: 0;
+}
