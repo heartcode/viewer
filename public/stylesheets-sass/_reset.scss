@@ -1,11 +1,12 @@
 @import "vendor/normalize";
 
 /* VARIABLES */
-$app_bg_colour: #efefef;
+$app_bg_colour: #333;
 $app_font_color: #efefef;
 // Easing types
 $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 $easeOutExpo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$minimum_app_width: 1960px;
 
 /* RESETS */
 body, html {
@@ -23,5 +24,10 @@ body, html {
   padding: 0;
 }
 .backface_invisible {
-  -webkit-backface-visibility: hidden;
+  @include backface-visibility(hidden);
+}
+.hardware_accellerated {
+  @include transform(translate3d(0, 0, 0));
+  @extend .backface_invisible;
+  @include perspective(1000);
 }

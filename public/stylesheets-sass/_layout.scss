@@ -10,25 +10,27 @@ body, html {
 
   .top_pattern {
     z-index: 1;
-    background-image: url('/images/background-pattern.png');
     position: absolute;
     @extend .expanded;
+    background-image: url('/images/background-pattern.png');
   }
 
   .gallery_images {
     z-index: 0;
     position: absolute;
-    display: inline-block;
-    @extend .expanded;
+    display: inline;
+    width: $minimum_app_width;
+    height: 100%;
     @extend .reset_box;
-    background: red;
     list-style: none;
 
+    @extend .hardware_accellerated;
+
     li {
+      position: relative;
       display: inline-block;
+      float: left;
       @extend .expanded;
-      background: blue;
-      overflow: hidden;
 
       .image {
         display: block;

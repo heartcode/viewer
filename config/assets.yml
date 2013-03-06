@@ -13,9 +13,11 @@ javascript_compressor:  uglifier     # (yui, closure, uglifier)
 javascripts:
   header_scripts:
     - public/javascripts/vendor/modernizr-latest.js
+    - public/javascripts/utils/utils.js
+    - public/javascripts/utils/storage.js
   footer_scripts:
     - public/javascripts/vendor/jquery.js
-    - public/javascripts/viewer.js
+    - public/javascripts/application.js
 
 stylesheets:
   application:
