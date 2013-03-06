@@ -320,22 +320,30 @@ table {
   border-spacing: 0;
 }
 
-/* line 3, ../stylesheets-sass/_reset.scss */
+/* VARIABLES */
+/* RESETS */
+/* line 11, ../stylesheets-sass/_reset.scss */
 body, html {
   background-color: #efefef;
-  color: #333;
+  color: #efefef;
 }
 
-/* line 8, ../stylesheets-sass/_reset.scss */
-.full_browser_size, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_images, .gallery_container .gallery_images li {
+/* EXTENDS */
+/* line 17, ../stylesheets-sass/_reset.scss */
+.expanded, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_images, .gallery_container .gallery_images li, .gallery_container .gallery_images li .image {
   width: 100%;
   height: 100%;
 }
 
-/* line 12, ../stylesheets-sass/_reset.scss */
+/* line 21, ../stylesheets-sass/_reset.scss */
 .reset_box, .gallery_container .gallery_images {
   margin: 0;
   padding: 0;
+}
+
+/* line 25, ../stylesheets-sass/_reset.scss */
+.backface_invisible {
+  -webkit-backface-visibility: hidden;
 }
 
 /* line 1, ../stylesheets-sass/_layout.scss */
@@ -351,18 +359,29 @@ body, html {
 }
 /* line 11, ../stylesheets-sass/_layout.scss */
 .gallery_container .top_pattern {
-  background: url("/images/background-pattern.png");
+  z-index: 1;
+  background-image: url("/images/background-pattern.png");
   position: absolute;
 }
-/* line 17, ../stylesheets-sass/_layout.scss */
+/* line 18, ../stylesheets-sass/_layout.scss */
 .gallery_container .gallery_images {
+  z-index: 0;
+  position: absolute;
   display: inline-block;
   background: red;
   list-style: none;
 }
-/* line 24, ../stylesheets-sass/_layout.scss */
+/* line 27, ../stylesheets-sass/_layout.scss */
 .gallery_container .gallery_images li {
   display: inline-block;
   background: blue;
   overflow: hidden;
+}
+/* line 33, ../stylesheets-sass/_layout.scss */
+.gallery_container .gallery_images li .image {
+  display: block;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/images/gallery/large/2174978936_4a806fe471_b.jpg");
 }

@@ -6,26 +6,38 @@ body, html {
   position: fixed;
   top: 0;
   left: 0;
-  @extend .full_browser_size;
+  @extend .expanded;
 
   .top_pattern {
-    background: url('/images/background-pattern.png');
+    z-index: 1;
+    background-image: url('/images/background-pattern.png');
     position: absolute;
-    @extend .full_browser_size;
+    @extend .expanded;
   }
 
   .gallery_images {
+    z-index: 0;
+    position: absolute;
     display: inline-block;
-    @extend .full_browser_size;
+    @extend .expanded;
     @extend .reset_box;
     background: red;
     list-style: none;
 
     li {
       display: inline-block;
-      @extend .full_browser_size;
+      @extend .expanded;
       background: blue;
       overflow: hidden;
+
+      .image {
+        display: block;
+        @extend .expanded;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('/images/gallery/large/2174978936_4a806fe471_b.jpg');
+      }
     }
   }
 }
