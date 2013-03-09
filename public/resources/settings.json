@@ -1,4 +1,5 @@
 {
+  "maxPhotos": "5",
   "imageBaseURL": "/images/gallery/",
   "photoFolder": "large/",
   "thumbnailFolder": "thumbnail/",
