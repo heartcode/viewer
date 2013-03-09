@@ -42,6 +42,12 @@ Viewer.App = (function () {
     galleryInstance.resize();
   },
 
+  /*
+  * Creates the Gallery module instance and passes the loaded data to it
+  * @method createGallery
+  * @private
+  * params data {Object} The externally loaded JSON data
+  */
   createGallery = function createGallery(data) {
     galleryInstance = new Viewer.App.Gallery({
       container: document.getElementsByClassName('gallery_container')[0]
