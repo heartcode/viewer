@@ -34,12 +34,26 @@ body, html {
       @extend .expanded;
 
       .image {
+        position: relative;
         display: block;
         @extend .expanded;
         background-position: 50% 50%;
         background-size: cover;
         background-repeat: no-repeat;
       }
+
+      .details_container {
+        position: absolute;
+        bottom: 0;
+        left: 4em;
+        color: $app_font_color;
+        font-size: 1.4em;
+        @include text-shadow(rgba(red, 0.4) 2px 2px 0);
+      }
     }
   }
+}
+
+.detail_block {
+  position: relative;
 }

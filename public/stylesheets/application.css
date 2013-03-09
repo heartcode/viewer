@@ -399,8 +399,23 @@ body, html {
 }
 /* line 36, ../stylesheets-sass/_layout.scss */
 .gallery_container .gallery_images li .image {
+  position: relative;
   display: block;
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+/* line 45, ../stylesheets-sass/_layout.scss */
+.gallery_container .gallery_images li .details_container {
+  position: absolute;
+  bottom: 0;
+  left: 4em;
+  color: #efefef;
+  font-size: 1.4em;
+  text-shadow: rgba(255, 0, 0, 0.4) 2px 2px 0;
+}
+
+/* line 57, ../stylesheets-sass/_layout.scss */
+.detail_block {
+  position: relative;
 }
