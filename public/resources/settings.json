@@ -1,5 +1,5 @@
 {
-  "imageBaseURL": "/public/images/gallery/",
+  "imageBaseURL": "/images/gallery/",
   "photoFolder": "large/",
   "thumbnailFolder": "thumbnail/",
   "photos":

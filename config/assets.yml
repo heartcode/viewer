@@ -18,6 +18,8 @@ javascripts:
   footer_scripts:
     - public/javascripts/vendor/jquery.js
     - public/javascripts/application.js
+    - public/javascripts/gallery.js
+    - public/javascripts/gallery_item.js
 
 stylesheets:
   application:

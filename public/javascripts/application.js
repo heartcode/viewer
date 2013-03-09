@@ -16,54 +16,80 @@ Utils.namespace('Viewer.App');
 Viewer.App = (function () {
   'use strict';
   
+
+
   /**
    * Private fields
    */
   var moduleString = 'Viewer.App',
-      galleryEl,
-      galleryItemEls,
+      galleryInstance,
+      cacheBuster = '?' + new Date().getTime(),
 
 
-
+  
   /**
    * Private methods
    */
 
+  /*
+  * Handles the browser resize
+  * @method resize
+  * @private
+  * param event {Object} The resize event
+  */
   resize = function resize(event) {
-    resizeGallery();
-    resizeGalleryItems();
+    galleryInstance.resize();
   },
-  resizeGallery = function resizeGallery() {
-    $(galleryEl).width(galleryItemEls.length * window.innerWidth);
+
+  createGallery = function createGallery(data) {
+    galleryInstance = new Viewer.App.Gallery({
+      container: document.getElementsByClassName('gallery_container')[0]
+    }).setup(data);
+    resize();
   },
-  resizeGalleryItems = function resizeGalleryItems() {
-    for (var i = 0; i < galleryItemEls.length; i++) {
-      $(galleryItemEls[i]).width(window.innerWidth);
-    }
+
+  /*
+  * Loads the external settings JSON file and calls the gallery creator method on success
+  * @method loadSettings
+  * @private
+  */
+  loadSettings = function loadSettings() {
+    $.when(
+      $.ajax('resources/settings.json' + cacheBuster)
+    ).done(function (data) {
+      createGallery(data);
+    }).fail(function () {
+      // TODO - Handling the error visually in the application
+      log('Setup error!');
+    });
   },
 
 
 
   /**
    * Public methods
-   */
+  */
 
-  init = function init() {
-    // Storing references to the view components
-    galleryEl = document.getElementsByClassName('gallery_images')[0];
-    galleryItemEls = document.getElementsByClassName('gallery_image');
-
-    // Adding an event handler to the 'resize' event
+  /*
+  *
+  * @method setup
+  */
+  setup = function setup() {
+    // Adds an event handler to the 'resize' event
     $(window).on('resize', resize);
-    $(window).trigger('resize');
+
+    // Loads the settings
+    loadSettings();
   };
 
-   /**
+
+
+  /**
    * Public interface
-   */
+  */
 
   return {
-    init: init
+    setup: setup
   };
 
  });
