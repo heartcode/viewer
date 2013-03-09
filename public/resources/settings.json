@@ -1,0 +1,128 @@
+{
+  "imageBaseURL": "/public/images/gallery/",
+  "photoFolder": "large/",
+  "thumbnailFolder": "thumbnail/",
+  "photos":
+  [
+    {
+      "title": "Composition",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "composed.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Crane",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "crane.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "That's cute",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "cute.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Look in the eye",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "eye.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Look at me",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "look_at_me.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "That's all around Shoreditch",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "grin.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Cool birds have cool hair",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "hello.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Monkey",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "monkey.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Around the corner",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "parrot.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Problems",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "problems.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Psssssst",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "psst.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Shout out loud!",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "shout.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Cute smile",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "smile.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Spilling it all over",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "spill.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Hello beautiful",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "teeth.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "The big picture",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "the_big_picture.jpg",
+      "thumbnail": ""
+    },
+    {
+      "title": "Arkhem",
+      "author": "Robert Pataki",
+      "location": "London",
+      "photo": "wide_mouth.jpg",
+      "thumbnail": ""
+    }
+  ]
+}
+
