@@ -22,6 +22,9 @@ javascripts:
     - public/javascripts/viewer/navigation.js
     - public/javascripts/viewer/gallery.js
     - public/javascripts/viewer/gallery_item.js
+    - public/javascripts/vendor/greensock/TweenLite.js
+    - public/javascripts/vendor/greensock/easing/EasePack.js
+    - public/javascripts/vendor/greensock/plugins/CSSPlugin.js
 
 stylesheets:
   application:
