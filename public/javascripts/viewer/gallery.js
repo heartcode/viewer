@@ -75,6 +75,23 @@ Viewer.App.Gallery = (function (options) {
     for (var i = 0; i < galleryItems.length; i++) {
       galleryItems[i].resize();
     }
+  },
+
+
+  /*
+  * Shows the previous photo
+  * @method showPrevious
+  */
+  showPrevious = function showPrevious() {
+    log('Previous should be shown!');
+  },
+
+  /*
+  * Shows the next photo
+  * @method showNext
+  */
+  showNext = function showNext() {
+    log('Next should be shown!');
   };
 
 
@@ -84,6 +101,8 @@ Viewer.App.Gallery = (function (options) {
 **********************/
   return {
     setup: setup,
-    resize: resize
+    resize: resize,
+    next: showNext,
+    previous: showPrevious
   };
 });

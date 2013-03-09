@@ -66,7 +66,7 @@ Viewer.App = (function () {
     navigationInstance = new Viewer.App.Navigation({
       container: document.getElementsByClassName('gallery_container')[0]
     });
-    events.on(Viewer.App.Navigation.Events.onButtonClick, onNavigationButtonClick);
+    events.on(Viewer.App.Navigation.Events.BUTTON_CLICK, onNavigationButtonClick);
   },
 
   /*
@@ -94,7 +94,11 @@ Viewer.App = (function () {
   * @param event {Object} The triggering event
   */
   onNavigationButtonClick = function onNavigationButtonClick(event, button) {
-    log('Viewer.App.onNavigationButtonClick: ' + button);
+    if (button === Viewer.App.Navigation.Buttons.NEXT) {
+      galleryInstance.next();
+    } else if (button === Viewer.App.Navigation.Buttons.PREV) {
+      galleryInstance.previous();
+    }
   },
 
 

@@ -35,14 +35,19 @@ Viewer.App.Navigation = (function (options) {
  * Private methods
 **********************/
 
+  /*
+  * Handles the next/previous button clicks and triggers a custom event
+  * @method onButtonClick
+  * @see Viewer.App.Navigation.Events
+  * @param event {}
+  * @private
+  */
   onButtonClick = function onButtonClick(event) {
-    var buttonId = 'next';
-    if (event.currentTarget === nextButton[0]) {
-      
-    } else if (event.currentTarget === prevButton[0]) {
-      buttonId = 'previous';
+    var button = Viewer.App.Navigation.Buttons.NEXT;
+    if (event.currentTarget === prevButton[0]) {
+      button = Viewer.App.Navigation.Buttons.PREV;
     }
-    events.trigger(Viewer.App.Navigation.Events.onButtonClick, buttonId);
+    events.trigger(Viewer.App.Navigation.Events.BUTTON_CLICK, button);
   },
 
   /*
@@ -78,7 +83,12 @@ Viewer.App.Navigation = (function (options) {
   
   // Custom events
   Viewer.App.Navigation.Events = {
-    onButtonClick: 'Viewer.App.Navigation.onButtonClick'
+    BUTTON_CLICK: 'Viewer.App.Navigation.onButtonClick'
+  };
+  // Button names
+  Viewer.App.Navigation.Buttons = {
+    NEXT: 'nextButton',
+    PREVIOUS: 'prevButton'
   };
 
 
