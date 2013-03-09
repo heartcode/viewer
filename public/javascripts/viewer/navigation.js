@@ -27,6 +27,7 @@ Viewer.App.Navigation = (function (options) {
       nextButton,
       prevButton,
       view,
+      events = Viewer.App.EventAggregator,
 
 
 
@@ -35,11 +36,13 @@ Viewer.App.Navigation = (function (options) {
 **********************/
 
   onButtonClick = function onButtonClick(event) {
+    var buttonId = 'next';
     if (event.currentTarget === nextButton[0]) {
-      log('Next button clicked!');
+      
     } else if (event.currentTarget === prevButton[0]) {
-      log('Prev button clicked!');
+      buttonId = 'previous';
     }
+    events.trigger(Viewer.App.Navigation.Events.onButtonClick, buttonId);
   },
 
   /*
@@ -69,10 +72,20 @@ Viewer.App.Navigation = (function (options) {
   };
 
 
+/*****************************************
+ * Public static fields
+**********************/
+  
+  // Custom events
+  Viewer.App.Navigation.Events = {
+    onButtonClick: 'Viewer.App.Navigation.onButtonClick'
+  };
+
 
 /*****************************************
  * Public interface
 **********************/
+
   return {
     resize: resize
   };
