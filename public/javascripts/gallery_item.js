@@ -10,7 +10,7 @@ Viewer.App.GalleryItem = (function (options) {
   var container = options.container,
       id = options.id,
       name = 'galleryItem_' + id,
-      template = '<li class="gallery_image"><span class="image"></span></li>',
+      template = '<li class="gallery_image"><div class="top_pattern"></div><span class="image"></span></li>',
       detailsTemplateSource = $('#template_gallery_details').html(),
       photoItem,
       view,

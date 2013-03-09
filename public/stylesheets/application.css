@@ -407,6 +407,7 @@ body, html {
 }
 /* line 45, ../stylesheets-sass/_layout.scss */
 .gallery_container .gallery_images li .details_container {
+  z-index: 2;
   position: absolute;
   bottom: 0;
   left: 4em;
@@ -415,7 +416,7 @@ body, html {
   text-shadow: rgba(255, 0, 0, 0.4) 2px 2px 0;
 }
 
-/* line 57, ../stylesheets-sass/_layout.scss */
+/* line 58, ../stylesheets-sass/_layout.scss */
 .detail_block {
   position: relative;
 }
