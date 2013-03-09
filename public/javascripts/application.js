@@ -1,4 +1,4 @@
-/*!
+/*
   * Viewer.App
   *
   * Main Facade for bootstrapping all application components.
@@ -18,18 +18,19 @@ Viewer.App = (function () {
   
 
 
-  /**
-   * Private fields
-   */
+/*****************************************
+ * Private fields
+**********************/
+
   var moduleString = 'Viewer.App',
       galleryInstance,
       cacheBuster = '?' + new Date().getTime(),
 
 
   
-  /**
-   * Private methods
-   */
+/*****************************************
+ * Private methods
+**********************/
 
   /*
   * Handles the browser resize
@@ -66,12 +67,12 @@ Viewer.App = (function () {
 
 
 
-  /**
-   * Public methods
-  */
+/*****************************************
+ * Public methods
+**********************/
 
   /*
-  *
+  * Sets up the application instance
   * @method setup
   */
   setup = function setup() {
@@ -84,9 +85,9 @@ Viewer.App = (function () {
 
 
 
-  /**
-   * Public interface
-  */
+/*****************************************
+ * Public interface
+**********************/
 
   return {
     setup: setup

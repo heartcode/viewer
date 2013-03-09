@@ -1,12 +1,26 @@
 /*
-*
+  * Viewer.App.Gallery
+  *
+  * The GalleryItem module of the viewer.
+  * This module holds each photo and their details
+  *
+  *
+  * 2013 Robert Pataki [robert@robertpataki.com]
+  *
 */
+
+/*global Utils log $ Viewer Handlebars*/
+
 Utils.namespace('Viewer.App.GalleryItem');
 Viewer.App.GalleryItem = (function (options) {
+  'use strict';
+
+
   
-  /**
-   * Private fields
-   */
+/*****************************************
+ * Private fields
+**********************/
+
   var container = options.container,
       id = options.id,
       name = 'galleryItem_' + id,
@@ -17,18 +31,22 @@ Viewer.App.GalleryItem = (function (options) {
 
 
 
-  /**
-   * Private methods
-  */
+/*****************************************
+ * Private methods
+**********************/
 
 
 
-  /**
-   * Public methods
-  */
+/*****************************************
+ * Public methods
+**********************/
 
   /*
-  *
+  * Sets up the Gallery item instance
+  * @method setup
+  * @param photoURL {String} The path to the photo file
+  * @param details {Object} The object holding data such as {{title}}, {{author}} and {{location}} of each photo
+  * @private
   */
   setup = (function setup(photoURL, details) {
     view = $(template).appendTo(container);
@@ -53,9 +71,10 @@ Viewer.App.GalleryItem = (function (options) {
 
 
 
-  /**
-   * Public interface
-  */
+/*****************************************
+ * Public interface
+**********************/
+
   return {
     resize: resize
   };
