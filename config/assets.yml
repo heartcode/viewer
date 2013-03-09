@@ -19,6 +19,7 @@ javascripts:
     - public/javascripts/vendor/jquery.js
     - public/javascripts/vendor/handlebars.js
     - public/javascripts/application.js
+    - public/javascripts/viewer/navigation.js
     - public/javascripts/viewer/gallery.js
     - public/javascripts/viewer/gallery_item.js
 

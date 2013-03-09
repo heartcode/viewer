@@ -24,6 +24,7 @@ Viewer.App = (function () {
 
   var moduleString = 'Viewer.App',
       galleryInstance,
+      navigationInstance,
       cacheBuster = '?' + new Date().getTime(),
 
 
@@ -40,6 +41,7 @@ Viewer.App = (function () {
   */
   resize = function resize(event) {
     galleryInstance.resize();
+    navigationInstance.resize();
   },
 
   /*
@@ -52,7 +54,17 @@ Viewer.App = (function () {
     galleryInstance = new Viewer.App.Gallery({
       container: document.getElementsByClassName('gallery_container')[0]
     }).setup(data);
-    resize();
+  },
+
+  /*
+  * Creates the Navigation module instance, that will control the photo navigation
+  * @method createNavigation
+  * @private
+  */
+  createNavigation = function createNavigation() {
+    navigationInstance = new Viewer.App.Navigation({
+      container: document.getElementsByClassName('gallery_container')[0]
+    });
   },
 
   /*
@@ -65,6 +77,8 @@ Viewer.App = (function () {
       $.ajax('resources/settings.json' + cacheBuster)
     ).done(function (data) {
       createGallery(data);
+      createNavigation();
+      resize();
     }).fail(function () {
       // TODO - Handling the error visually in the application
       log('Setup error!');
