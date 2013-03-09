@@ -55,6 +55,9 @@ Viewer.App = (function () {
     galleryInstance = new Viewer.App.Gallery({
       container: document.getElementsByClassName('gallery_container')[0]
     }).setup(data);
+    events.on(Viewer.App.Gallery.Events.ITEM_SHOWN, onPhotoShown);
+    events.on(Viewer.App.Gallery.Events.FIRST_ITEM_SHOWN, onFirstPhotoShown);
+    events.on(Viewer.App.Gallery.Events.LAST_ITEM_SHOWN, onLastPhotoShown);
   },
 
   /*
@@ -66,7 +69,8 @@ Viewer.App = (function () {
     navigationInstance = new Viewer.App.Navigation({
       container: document.getElementsByClassName('gallery_container')[0]
     });
-    events.on(Viewer.App.Navigation.Events.BUTTON_CLICK, onNavigationButtonClick);
+    events.on(Viewer.App.Navigation.Events.NEXT_BUTTON_CLICK, onNextNavButtonClick);
+    events.on(Viewer.App.Navigation.Events.PREV_BUTTON_CLICK, onPreviousNavButtonClick);
   },
 
   /*
@@ -87,18 +91,60 @@ Viewer.App = (function () {
     });
   },
 
+
+
+/*****************************************
+ * Event handlers
+**********************/
+
   /*
-  * Handles the navigation button click events
-  * @method onNavigationButtonClick
+  * Handles the navigation 'NEXT' button click events
+  * @method onNextNavButtonClick
   * @private
   * @param event {Object} The triggering event
   */
-  onNavigationButtonClick = function onNavigationButtonClick(event, button) {
-    if (button === Viewer.App.Navigation.Buttons.NEXT) {
-      galleryInstance.next();
-    } else if (button === Viewer.App.Navigation.Buttons.PREV) {
-      galleryInstance.previous();
-    }
+  onNextNavButtonClick = function onNextNavButtonClick(event) {
+    galleryInstance.next();
+  },
+
+  /*
+  * Handles the navigation 'PREVIOUS' button click events
+  * @method onPreviousNavButtonClick
+  * @private
+  * @param event {Object} The triggering event
+  */
+  onPreviousNavButtonClick = function onPreviousNavButtonClick(event) {
+    galleryInstance.previous();
+  },
+
+  /*
+  * Handles the the single photo shown event triggered by the Gallery instance
+  * @method onPhotoShown
+  * @private
+  * @param event {Object} The triggering event
+  */
+  onPhotoShown = function onPhotoShown(event) {
+    log('photo shown - ' + galleryInstance.selected());
+  },
+
+  /*
+  * Handles the the FIRST photo shown event triggered by the Gallery instance
+  * @method onPhotoShown
+  * @private
+  * @param event {Object} The triggering event
+  */
+  onFirstPhotoShown = function onFirstPhotoShown(event) {
+    log('first photo shown - ' + galleryInstance.selected());
+  },
+
+  /*
+  * Handles the the LAST photo shown event triggered by the Gallery instance
+  * @method onPhotoShown
+  * @private
+  * @param event {Object} The triggering event
+  */
+  onLastPhotoShown = function onLastPhotoShown(event) {
+    log('last photo shown - ' + galleryInstance.selected());
   },
 
 

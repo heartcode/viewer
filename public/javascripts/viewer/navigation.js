@@ -43,11 +43,11 @@ Viewer.App.Navigation = (function (options) {
   * @private
   */
   onButtonClick = function onButtonClick(event) {
-    var button = Viewer.App.Navigation.Buttons.NEXT;
     if (event.currentTarget === prevButton[0]) {
-      button = Viewer.App.Navigation.Buttons.PREV;
+      events.trigger(Viewer.App.Navigation.Events.PREV_BUTTON_CLICK);
+    } else {
+      events.trigger(Viewer.App.Navigation.Events.NEXT_BUTTON_CLICK);
     }
-    events.trigger(Viewer.App.Navigation.Events.BUTTON_CLICK, button);
   },
 
   /*
@@ -83,12 +83,8 @@ Viewer.App.Navigation = (function (options) {
   
   // Custom events
   Viewer.App.Navigation.Events = {
-    BUTTON_CLICK: 'Viewer.App.Navigation.onButtonClick'
-  };
-  // Button names
-  Viewer.App.Navigation.Buttons = {
-    NEXT: 'nextButton',
-    PREVIOUS: 'prevButton'
+    NEXT_BUTTON_CLICK: 'Viewer.App.Navigation.onNextButtonClick',
+    PREV_BUTTON_CLICK: 'Viewer.App.Navigation.onPrevButtonClick'
   };
 
 

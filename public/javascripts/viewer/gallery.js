@@ -26,6 +26,10 @@ Viewer.App.Gallery = (function (options) {
       template = '<ul class="gallery_images"></ul>',
       view,
       galleryItems = [],
+      events = Viewer.App.EventAggregator,
+      activeItemIndex = 0,
+      maxItems,
+      lastItemIndex,
 
 
 
@@ -48,7 +52,9 @@ Viewer.App.Gallery = (function (options) {
     view = $(template).appendTo(container);
 
     // Creates each gallery item using the details found in the loaded data file
-    for(var i = 0; i < data.photos.length; i++) {
+    maxItems = data.maxPhotos;
+    lastItemIndex = maxItems && maxItems < data.photos.length - 1 ? maxItems - 1 : data.photos.length - 1;
+    for(var i = 0; i <= lastItemIndex; i++) {
       var photoData = data.photos[i],
           photoURL = data.imageBaseURL + data.photoFolder + photoData.photo,
           photoDetails = {
@@ -83,7 +89,15 @@ Viewer.App.Gallery = (function (options) {
   * @method showPrevious
   */
   showPrevious = function showPrevious() {
-    log('Previous should be shown!');
+    if (activeItemIndex > 0) {
+      activeItemIndex --;
+      
+      if (activeItemIndex === 0) {
+        events.trigger(Viewer.App.Gallery.Events.FIRST_ITEM_SHOWN);
+      } else {
+        events.trigger(Viewer.App.Gallery.Events.ITEM_SHOWN);
+      }
+    }
   },
 
   /*
@@ -91,7 +105,36 @@ Viewer.App.Gallery = (function (options) {
   * @method showNext
   */
   showNext = function showNext() {
-    log('Next should be shown!');
+    if (activeItemIndex < lastItemIndex) {
+      activeItemIndex ++;
+      
+      if (activeItemIndex === lastItemIndex){
+        events.trigger(Viewer.App.Gallery.Events.LAST_ITEM_SHOWN);
+      }
+      else {
+        events.trigger(Viewer.App.Gallery.Events.ITEM_SHOWN);
+      }
+    }
+  },
+
+  /*
+  * Returns the active item's index
+  * @method getActiveItemIndex
+  * @return {Number}
+  */
+  getActiveItemIndex = function getActiveItemIndex() {
+    return activeItemIndex;
+  };
+
+/*****************************************
+ * Public static fields
+**********************/
+  
+  // Custom events
+  Viewer.App.Gallery.Events = {
+    FIRST_ITEM_SHOWN: 'Viewer.App.Gallery.onFirstItemShown',
+    LAST_ITEM_SHOWN: 'Viewer.App.Gallery.onLastItemShown',
+    ITEM_SHOWN: 'Viewer.App.Gallery.onItemShown'
   };
 
 
@@ -103,6 +146,7 @@ Viewer.App.Gallery = (function (options) {
     setup: setup,
     resize: resize,
     next: showNext,
-    previous: showPrevious
+    previous: showPrevious,
+    selected: getActiveItemIndex
   };
 });
