@@ -321,27 +321,46 @@ table {
 }
 
 /* VARIABLES */
+@font-face {
+  font-family: "Prime Light";
+  src: url(/fonts/Prime%20Light.eot);
+  src: url(/fonts/Prime%20Light.eot?#iefix) format('eot'), url(/fonts/Prime%20Light.woff) format('woff'), url(/fonts/Prime%20Light.ttf) format('truetype'), url(/fonts/Prime%20Light.svg#svgFontName) format('svg'), url(/fonts/Prime%20Light.eot?#iefix) format('embedded-opentype');
+}
+
 /* RESETS */
-/* line 12, ../stylesheets-sass/_reset.scss */
+/* line 17, ../stylesheets-sass/_reset.scss */
 body, html {
   background-color: #333333;
   color: #efefef;
+  font-family: "Prime Light", Verdana, Arial sans-serif;
+}
+
+/* TYPOGRAPHIC RYTHM */
+/* line 61, ../../../../.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 100%;
+}
+
+/* line 64, ../../../../.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
 /* EXTENDS */
-/* line 18, ../stylesheets-sass/_reset.scss */
+/* line 31, ../stylesheets-sass/_reset.scss */
 .expanded, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_images li, .gallery_container .gallery_images li .image {
   width: 100%;
   height: 100%;
 }
 
-/* line 22, ../stylesheets-sass/_reset.scss */
+/* line 35, ../stylesheets-sass/_reset.scss */
 .reset_box, .gallery_container .gallery_images {
   margin: 0;
   padding: 0;
 }
 
-/* line 26, ../stylesheets-sass/_reset.scss */
+/* line 39, ../stylesheets-sass/_reset.scss */
 .backface_invisible, .hardware_accellerated, .gallery_container .gallery_images {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -350,7 +369,7 @@ body, html {
   backface-visibility: hidden;
 }
 
-/* line 29, ../stylesheets-sass/_reset.scss */
+/* line 42, ../stylesheets-sass/_reset.scss */
 .hardware_accellerated, .gallery_container .gallery_images {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -1991,13 +2010,13 @@ ul.icons li [class*=" icon-"] {
   height: 100%;
   list-style: none;
 }
-/* line 24, ../stylesheets-sass/_gallery.scss */
+/* line 26, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li {
   position: relative;
   display: inline-block;
   float: left;
 }
-/* line 30, ../stylesheets-sass/_gallery.scss */
+/* line 32, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .image {
   position: relative;
   display: block;
@@ -2005,7 +2024,7 @@ ul.icons li [class*=" icon-"] {
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 39, ../stylesheets-sass/_gallery.scss */
+/* line 41, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .details_container {
   text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 0;
   position: absolute;
@@ -2030,19 +2049,19 @@ ul.icons li [class*=" icon-"] {
   margin-top: -50px;
   min-height: 100px;
   width: 100%;
-  pointer-events: none;
   font-size: 6em;
+  pointer-events: none;
 }
 /* line 15, ../stylesheets-sass/_navigation.scss */
 .viewer_navigation .button {
-  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
   position: absolute;
   display: block;
   width: 75px;
   height: 100px;
-  pointer-events: auto;
+  text-align: center;
   cursor: pointer;
-  text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
+  pointer-events: auto;
 }
 /* line 25, ../stylesheets-sass/_navigation.scss */
 .viewer_navigation .button.next {

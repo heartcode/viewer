@@ -3,16 +3,29 @@
 /* VARIABLES */
 $app_bg_colour: #333;
 $app_font_color: #efefef;
+
 // Easing types
 $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 $easeOutExpo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
 $minimum_app_width: 1960px;
 
+// Fonts
+@include font-face("Prime Light", font-files("/fonts/Prime%20Light.woff", "/fonts/Prime%20Light.ttf", "/fonts/Prime%20Light.svg#svgFontName", "/fonts/Prime%20Light.eot?#iefix"), "/fonts/Prime%20Light.eot");
+
+
 /* RESETS */
 body, html {
   background-color: $app_bg_colour;
   color: $app_font_color;
+  font-family: 'Prime Light', Verdana, Arial sans-serif;
 }
+
+
+/* TYPOGRAPHIC RYTHM */
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline;
+
 
 /* EXTENDS */
 .expanded {
@@ -28,6 +41,6 @@ body, html {
 }
 .hardware_accellerated {
   @include transform(translate3d(0, 0, 0));
-  @extend .backface_invisible;
   @include perspective(1000);
+  @extend .backface_invisible;
 }

@@ -14,6 +14,8 @@
 
   .gallery_images {
     @extend .reset_box;
+
+    @extend .hardware_accellerated;
     position: absolute;
     z-index: 0;
     display: inline;
@@ -46,7 +48,5 @@
         font-size: 1.4em;
       }
     }
-
-    @extend .hardware_accellerated;
   }
 }

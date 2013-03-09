@@ -9,18 +9,18 @@ $navigation_button_height: 100px;
   margin-top: - $navigation_button_height * 0.5;
   min-height: $navigation_button_height;
   width: 100%;
-  pointer-events: none;
   font-size: 6em;
+  pointer-events: none;
 
   .button {
-    text-align: center;
+    @include text-shadow(rgba(#000, 0.3) 2px 2px 2px);
     position: absolute;
     display: block;
     width: $navigation_button_width;
     height: $navigation_button_height;
-    pointer-events: auto;
+    text-align: center;
     cursor: pointer;
-    @include text-shadow(rgba(#000, 0.3) 2px 2px 2px);
+    pointer-events: auto;
 
     &.next {
       right: 0;
