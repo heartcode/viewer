@@ -3,6 +3,7 @@
 */
 Utils.namespace('Viewer.App.Gallery');
 Viewer.App.Gallery = (function (options) {
+  
   /**
    * Private fields
    */

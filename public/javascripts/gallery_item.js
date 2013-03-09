@@ -1,9 +1,9 @@
-Utils.namespace('Viewer.App.GalleryItem');
-
 /*
 *
 */
+Utils.namespace('Viewer.App.GalleryItem');
 Viewer.App.GalleryItem = (function (options) {
+  
   /**
    * Private fields
    */
@@ -11,6 +11,7 @@ Viewer.App.GalleryItem = (function (options) {
       id = options.id,
       name = 'galleryItem_' + id,
       template = '<li class="gallery_image"><span class="image"></span></li>',
+      detailsTemplateSource = $('#template_gallery_details').html(),
       photoItem,
       view,
 
@@ -25,10 +26,20 @@ Viewer.App.GalleryItem = (function (options) {
   /**
    * Public methods
   */
+
+  /*
+  *
+  */
   setup = (function setup(photoURL, details) {
     view = $(template).appendTo(container);
     photoItem = view.find('.image')[0];
     $(photoItem).css('background-image', 'url(' + photoURL + ')');
+
+    var detailsTemplate = Handlebars.compile(detailsTemplateSource),
+        detailsTemplateHTML = detailsTemplate(details);
+    
+    view.append(detailsTemplateHTML);
+
   })(options.photoURL, options.details),
 
   /*
