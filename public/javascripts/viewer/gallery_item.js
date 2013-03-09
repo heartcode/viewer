@@ -35,12 +35,6 @@ Viewer.App.GalleryItem = (function (options) {
  * Private methods
 **********************/
 
-
-
-/*****************************************
- * Public methods
-**********************/
-
   /*
   * Sets up the Gallery item instance
   * @method setup
@@ -59,6 +53,12 @@ Viewer.App.GalleryItem = (function (options) {
     view.append(detailsTemplateHTML);
 
   })(options.photoURL, options.details),
+
+
+
+/*****************************************
+ * Public methods
+**********************/
 
   /*
   * Handles the browser resize

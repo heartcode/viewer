@@ -45,7 +45,6 @@ Viewer.App.Gallery = (function (options) {
   * @param data {Object} The externally loaded setup data containing photo details and file paths
   */
   setup = function setup(data) {
-    // TODO - do this using proper templating such as underscore, handlebars or mustache
     view = $(template).appendTo(container);
 
     // Creates each gallery item using the details found in the loaded data file
