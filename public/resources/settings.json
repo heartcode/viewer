@@ -1,128 +1,93 @@
 {
-  "maxPhotos": "10",
+  "maxPhotos": "-1",
   "imageBaseURL": "/images/gallery/",
   "photoFolder": "large/",
-  "thumbnailFolder": "thumbnail/",
   "photos":
   [
     {
       "title": "Composition",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "composed.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "composed.jpg"
     },
     {
       "title": "Crane",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "crane.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "crane.jpg"
     },
     {
       "title": "That's cute",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "cute.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "cute.jpg"
     },
     {
       "title": "Look in the eye",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "eye.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "eye.jpg"
     },
     {
       "title": "Look at me",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "look_at_me.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "look_at_me.jpg"
     },
     {
       "title": "That's all around Shoreditch",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "grin.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "grin.jpg"
     },
     {
       "title": "Cool birds have cool hair",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "hello.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "hello.jpg"
     },
     {
       "title": "Monkey",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "monkey.jpg",
-      "thumbnail": ""
+      "location": "London, Redchurch Street",
+      "photo": "monkey.jpg"
     },
     {
       "title": "Around the corner",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "parrot.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "parrot.jpg"
     },
     {
       "title": "Problems",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "problems.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "problems.jpg"
     },
     {
       "title": "Psssssst",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "psst.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "psst.jpg"
     },
     {
       "title": "Shout out loud!",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "shout.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "shout.jpg"
     },
     {
       "title": "Cute smile",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "smile.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "smile.jpg"
     },
     {
       "title": "Spilling it all over",
-      "author": "Robert Pataki",
       "location": "London",
-      "photo": "spill.jpg",
-      "thumbnail": ""
+      "photo": "spill.jpg"
     },
     {
       "title": "Hello beautiful",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "teeth.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "teeth.jpg"
     },
     {
       "title": "The big picture",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "the_big_picture.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "the_big_picture.jpg"
     },
     {
       "title": "Arkhem",
-      "author": "Robert Pataki",
-      "location": "London",
-      "photo": "wide_mouth.jpg",
-      "thumbnail": ""
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "wide_mouth.jpg"
     }
   ]
 }
