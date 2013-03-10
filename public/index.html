@@ -12,10 +12,13 @@
 
 <script type="text/x-handlebars-template" id="template_gallery_details">
   <div class="details_container">
-    <div class="detail_block">
+    <div class="detail_block number_block">
+      <span class="index">{{index}}</span><span class="of">/</span><span class="total">{{total}}</span>
+    </div>
+    <div class="detail_block title_block">
       <h2>{{title}}</h2>
     </div>
-    <div class="detail_block">
+    <div class="detail_block location_block">
       <p>{{location}}</p>
     </div>
   </div>

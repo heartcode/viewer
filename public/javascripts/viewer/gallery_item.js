@@ -29,6 +29,7 @@ Viewer.App.GalleryItem = (function (options) {
       photoItem,
       $detailsTitle,
       $detailsCopy,
+      $detailsNumbers,
       view,
       detailsTitleAnimOffsetX = 40,
       detailsCopyAnimOffsetX = 60,
@@ -56,8 +57,9 @@ Viewer.App.GalleryItem = (function (options) {
     
     view.append(detailsTemplateHTML);
 
-    $detailsTitle = view.find('.detail_block h2').parent();
-    $detailsCopy = view.find('.detail_block p').parent();
+    $detailsTitle = view.find('.title_block');
+    $detailsCopy = view.find('.location_block');
+    $detailsNumbers = view.find('.number_block');
 
   })(options.photoURL, options.details),
 
@@ -97,8 +99,10 @@ Viewer.App.GalleryItem = (function (options) {
 
     TweenLite.killTweensOf($detailsTitle);
     TweenLite.killTweensOf($detailsCopy);
+    TweenLite.killTweensOf($detailsNumbers);
     TweenLite.set($detailsTitle, {opacity: 0, x: titleResetPosX});
     TweenLite.set($detailsCopy, {opacity: 0, x: copyResetPosX});
+    TweenLite.set($detailsNumbers, {x: -10, scaleX: 0});
 
     // Preparing the animations of the photo
     TweenLite.killTweensOf($(photoItem));
@@ -118,7 +122,8 @@ Viewer.App.GalleryItem = (function (options) {
 
     // Animating the details
     TweenLite.to($detailsTitle, 0.9, {opacity: 1, x: 0, delay: 0.2, ease: Expo.easeOut});
-    TweenLite.to($detailsCopy, 0.9, {opacity: 1, x: 0, delay: 0.3, ease: Expo.easeOut});
+    TweenLite.to($detailsCopy, 0.7, {opacity: 1, x: 0, delay: 0.3, ease: Expo.easeOut});
+    TweenLite.to($detailsNumbers, 0.4, {x: 0, scaleX: 1, transformOrigin: "right", delay: 0.6, ease: Expo.easeOut});
   };
 
 

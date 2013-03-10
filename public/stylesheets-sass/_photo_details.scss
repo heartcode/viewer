@@ -20,6 +20,33 @@
     padding: 0.3em 0.6em 0.2em 0.5em;
     font-size: 0.7em;
   }
+
+  &.number_block {
+    position: absolute;
+    width: 120px;
+    height: 76px;
+    font-size: 1.8em;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    @include transition-property(background);
+    @include transition-duration(0.2s);
+
+    span {
+      display: inline-block;
+      margin: 34px 0 0 0;
+    }
+
+    overflow: hidden;
+  }
+
+  &.title_block {
+    display: inline-block;
+    margin-left: 121px;
+  }
+
+  &.location_block {
+    margin-left: 121px;
+  }
 }
 
 .details_container:hover {
@@ -27,5 +54,8 @@
     h2, p {
       background: rgba(0, 0, 0, 1);
     }
+  }
+  .number_block {
+    background: rgba(0, 0, 0, 1);
   }
 }

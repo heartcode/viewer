@@ -69,7 +69,7 @@ $navigation_button_height: 75px;
       }
     }
     &.disabled {
-      @include opacity(0.2);
+      @include opacity(0.3);
       pointer-events: none;
 
       .hit_area {

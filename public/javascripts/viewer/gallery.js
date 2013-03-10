@@ -86,6 +86,8 @@ Viewer.App.Gallery = (function (options) {
       var photoData = data.photos[i],
           photoURL = data.imageBaseURL + data.photoFolder + photoData.photo,
           photoDetails = {
+            index: i + 1,
+            total: maxItems,
             title: photoData.title,
             author: photoData.author,
             location: photoData.location
