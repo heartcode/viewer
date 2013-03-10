@@ -39,7 +39,7 @@ Viewer.App.Navigation = (function (options) {
   * Handles the next/previous button clicks and triggers a custom event
   * @method onButtonClick
   * @see Viewer.App.Navigation.Events
-  * @param event {}
+  * @param event {Object}
   * @private
   */
   onButtonClick = function onButtonClick(event) {
@@ -47,6 +47,23 @@ Viewer.App.Navigation = (function (options) {
       events.trigger(Viewer.App.Navigation.Events.PREV_BUTTON_CLICK);
     } else {
       events.trigger(Viewer.App.Navigation.Events.NEXT_BUTTON_CLICK);
+    }
+  },
+
+  /*
+  * Handles the keyboard input
+  * @method onKeyUp
+  * @private
+  * @param event {Object}
+  */
+  onKeyUp = function onKeyUp(event) {
+    switch(event.keyCode) {
+      case Viewer.App.Navigation.Keyboard.KEY_LEFT:
+        prevButton.click();
+      break;
+      case Viewer.App.Navigation.Keyboard.KEY_RIGHT:
+        nextButton.click();
+      break;
     }
   },
 
@@ -61,6 +78,7 @@ Viewer.App.Navigation = (function (options) {
     prevButton = view.find('.button.previous');
 
     view.on('click.Viewer.App.Navigation', '.button', onButtonClick);
+    $(document).on('keyup.Viewer.App.Navigation', onKeyUp);
   })(),
 
 
@@ -117,6 +135,12 @@ Viewer.App.Navigation = (function (options) {
   Viewer.App.Navigation.Events = {
     NEXT_BUTTON_CLICK: 'Viewer.App.Navigation.onNextButtonClick',
     PREV_BUTTON_CLICK: 'Viewer.App.Navigation.onPrevButtonClick'
+  },
+
+  // Keyboard codes
+  Viewer.App.Navigation.Keyboard = {
+    KEY_RIGHT: 39,
+    KEY_LEFT: 37
   };
 
 
