@@ -1,4 +1,5 @@
 .detail_block {
+  @extend .hardware_accellerated;
   position: relative;
   display: block;
 

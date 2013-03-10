@@ -27,8 +27,8 @@ $navigation_button_height: 100px;
     }
 
     &.disabled {
-      pointer-events: none;
       @include opacity(0.2);
+      pointer-events: none;
     }
   }
 }

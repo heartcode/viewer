@@ -31,6 +31,7 @@ Viewer.App.Gallery = (function (options) {
       activeItemIndex = 0,
       maxItems,
       slideTransition = null,
+      direction = null,
 
 
 
@@ -48,12 +49,13 @@ Viewer.App.Gallery = (function (options) {
     // TODO make it work dynamically with the window width
     // And obviously the gallery items need to be reset at some point for keeping consistency in the transitions
     var destPosX = - activeItemIndex * window.innerWidth;
-    
+
     // Slides the gallery
+    TweenLite.killTweensOf(view);
     slideTransition = TweenLite.to(view, 0.6, {x: destPosX, ease: Expo.easeOut});
 
     // Activates the gallery item instance
-    galleryItems[activeItemIndex].prepare().show();
+    galleryItems[activeItemIndex].prepare(direction).show();
   },
 
   /*
@@ -119,6 +121,7 @@ Viewer.App.Gallery = (function (options) {
   */
   showPrevious = function showPrevious() {
     if (activeItemIndex > 0) {
+      direction = Viewer.App.Gallery.Directions.LEFT;
       prevActiveIndex = activeItemIndex;
       activeItemIndex --;
       resetCurrentPhoto();
@@ -138,6 +141,7 @@ Viewer.App.Gallery = (function (options) {
   */
   showNext = function showNext() {
     if (activeItemIndex < maxItems - 1) {
+      direction = Viewer.App.Gallery.Directions.RIGHT;
       prevActiveIndex = activeItemIndex;
       activeItemIndex ++;
       resetCurrentPhoto();
@@ -170,6 +174,12 @@ Viewer.App.Gallery = (function (options) {
     FIRST_ITEM_SHOWN: 'Viewer.App.Gallery.onFirstItemShown',
     LAST_ITEM_SHOWN: 'Viewer.App.Gallery.onLastItemShown',
     ITEM_SHOWN: 'Viewer.App.Gallery.onItemShown'
+  },
+
+  // Navigation directions
+  Viewer.App.Gallery.Directions = {
+    LEFT: 'Viewer.App.Gallery.left',
+    RIGHT: 'Viewer.App.Gallery.right'
   };
 
 

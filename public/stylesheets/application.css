@@ -361,7 +361,7 @@ html {
 }
 
 /* line 39, ../stylesheets-sass/_reset.scss */
-.backface_invisible, .hardware_accellerated, .gallery_container .gallery_images li .image {
+.backface_invisible, .hardware_accellerated, .gallery_container .gallery_images li .image, .gallery_container .gallery_images li .details_container, .detail_block {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -370,7 +370,7 @@ html {
 }
 
 /* line 42, ../stylesheets-sass/_reset.scss */
-.hardware_accellerated, .gallery_container .gallery_images li .image {
+.hardware_accellerated, .gallery_container .gallery_images li .image, .gallery_container .gallery_images li .details_container, .detail_block {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -2003,14 +2003,14 @@ ul.icons li [class*=" icon-"] {
 }
 /* line 15, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_shadow {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
-  box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
   pointer-events: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
 }
 /* line 25, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images {
@@ -2037,13 +2037,13 @@ ul.icons li [class*=" icon-"] {
 }
 /* line 50, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .details_container {
-  text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 0;
   position: absolute;
   bottom: 4em;
   left: 3em;
   z-index: 2;
   color: #efefef;
   font-size: 1.4em;
+  text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 0;
 }
 
 /* line 1, ../stylesheets-sass/_photo_details.scss */
@@ -2051,18 +2051,18 @@ ul.icons li [class*=" icon-"] {
   position: relative;
   display: block;
 }
-/* line 5, ../stylesheets-sass/_photo_details.scss */
+/* line 6, ../stylesheets-sass/_photo_details.scss */
 .detail_block h2, .detail_block p {
   display: inline-block;
   margin: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 11, ../stylesheets-sass/_photo_details.scss */
+/* line 12, ../stylesheets-sass/_photo_details.scss */
 .detail_block h2 {
   padding: 0.6em 0.3em 0.2em 0.3em;
   font-size: 1.125em;
 }
-/* line 15, ../stylesheets-sass/_photo_details.scss */
+/* line 16, ../stylesheets-sass/_photo_details.scss */
 .detail_block p {
   padding: 0.3em 0.6em 0.2em 0.5em;
   font-size: 0.7em;
@@ -2097,7 +2097,7 @@ ul.icons li [class*=" icon-"] {
 }
 /* line 29, ../stylesheets-sass/_navigation.scss */
 .viewer_navigation .button.disabled {
-  pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
+  pointer-events: none;
 }

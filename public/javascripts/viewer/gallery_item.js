@@ -27,7 +27,11 @@ Viewer.App.GalleryItem = (function (options) {
       template = '<li class="gallery_image"><div class="top_pattern"></div><span class="image"></span></li>',
       detailsTemplateSource = $('#template_gallery_details').html(),
       photoItem,
+      $detailsTitle,
+      $detailsCopy,
       view,
+      detailsTitleAnimOffsetX = 40,
+      detailsCopyAnimOffsetX = 60,
 
 
 
@@ -51,6 +55,9 @@ Viewer.App.GalleryItem = (function (options) {
         detailsTemplateHTML = detailsTemplate(details);
     
     view.append(detailsTemplateHTML);
+
+    $detailsTitle = view.find('.detail_block h2').parent();
+    $detailsCopy = view.find('.detail_block p').parent();
 
   })(options.photoURL, options.details),
 
@@ -81,8 +88,19 @@ Viewer.App.GalleryItem = (function (options) {
   /*
   * Prepares the photo instance for the 'show' transition
   * @method prepareAnimations
+  * @param direction {String} The direction of the navigation change, that we need to nicely set the details transitions to match the direction of the gaallery animation flow
   */
-  prepareAnimations = function prepareAnimations() {
+  prepareAnimations = function prepareAnimations(direction) {
+    // Preparing the animations of the details
+    var titleResetPosX = !direction || direction === Viewer.App.Gallery.Directions.LEFT ? -detailsTitleAnimOffsetX : detailsTitleAnimOffsetX,
+        copyResetPosX = !direction || direction === Viewer.App.Gallery.Directions.LEFT ? -detailsCopyAnimOffsetX : detailsCopyAnimOffsetX;
+
+    TweenLite.killTweensOf($detailsTitle);
+    TweenLite.killTweensOf($detailsCopy);
+    TweenLite.set($detailsTitle, {opacity: 0, x: titleResetPosX});
+    TweenLite.set($detailsCopy, {opacity: 0, x: copyResetPosX});
+
+    // Preparing the animations of the photo
     TweenLite.killTweensOf($(photoItem));
     TweenLite.set($(photoItem), {scale: Viewer.App.GalleryItem.LARGE_PHOTO_SCALE});
 
@@ -94,8 +112,13 @@ Viewer.App.GalleryItem = (function (options) {
   * @method show
   */
   show = function show() {
+    // Animating the photo
     TweenLite.killTweensOf($(photoItem));
     TweenLite.to($(photoItem), 12, {scale: 1, ease: Expo.easeOut, transformOrigin: 'center center'});
+
+    // Animating the details
+    TweenLite.to($detailsTitle, 0.9, {opacity: 1, x: 0, delay: 0.2, ease: Expo.easeOut});
+    TweenLite.to($detailsCopy, 0.9, {opacity: 1, x: 0, delay: 0.3, ease: Expo.easeOut});
   };
 
 
