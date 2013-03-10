@@ -1,6 +1,6 @@
 {
   "maxPhotos": "-1",
-  "imageBaseURL": "/images/gallery/",
+  "imageBaseURL": "images/gallery/",
   "photoFolder": "large/",
   "photos":
   [
