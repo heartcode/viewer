@@ -71,6 +71,7 @@ Viewer.App = (function () {
     });
     events.on(Viewer.App.Navigation.Events.NEXT_BUTTON_CLICK, onNextNavButtonClick);
     events.on(Viewer.App.Navigation.Events.PREV_BUTTON_CLICK, onPreviousNavButtonClick);
+    navigationInstance.disablePreviousButton();
   },
 
   /*
@@ -124,7 +125,8 @@ Viewer.App = (function () {
   * @param event {Object} The triggering event
   */
   onPhotoShown = function onPhotoShown(event) {
-    log('photo shown - ' + galleryInstance.selected());
+    navigationInstance.enableNextButton();
+    navigationInstance.enablePreviousButton();
   },
 
   /*
@@ -134,7 +136,7 @@ Viewer.App = (function () {
   * @param event {Object} The triggering event
   */
   onFirstPhotoShown = function onFirstPhotoShown(event) {
-    log('first photo shown - ' + galleryInstance.selected());
+    navigationInstance.disablePreviousButton();
   },
 
   /*
@@ -144,7 +146,7 @@ Viewer.App = (function () {
   * @param event {Object} The triggering event
   */
   onLastPhotoShown = function onLastPhotoShown(event) {
-    log('last photo shown - ' + galleryInstance.selected());
+    navigationInstance.disableNextButton();
   },
 
 

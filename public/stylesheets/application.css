@@ -2095,3 +2095,9 @@ ul.icons li [class*=" icon-"] {
 .viewer_navigation .button.next {
   right: 0;
 }
+/* line 29, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.disabled {
+  pointer-events: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}

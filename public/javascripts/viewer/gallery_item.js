@@ -74,7 +74,6 @@ Viewer.App.GalleryItem = (function (options) {
   * @method resetAnimations
   */
   resetAnimations = function resetAnimations() {
-    log('reset: ' + id);
     TweenLite.killTweensOf($(photoItem));
     TweenLite.set($(photoItem), {scale: 1});
   },
@@ -95,7 +94,6 @@ Viewer.App.GalleryItem = (function (options) {
   * @method show
   */
   show = function show() {
-    log('show: ' + id);
     TweenLite.killTweensOf($(photoItem));
     TweenLite.to($(photoItem), 12, {scale: 1, ease: Expo.easeOut, transformOrigin: 'center center'});
   };

@@ -74,6 +74,38 @@ Viewer.App.Navigation = (function (options) {
   */
   resize = function resize() {
     
+  },
+
+  /*
+  * Enables the previous button
+  * @method enablePreviousButton
+  */
+  enablePreviousButton = function enablePreviousButton() {
+    prevButton.removeClass('disabled');
+  },
+
+  /*
+  * Disables the previous button
+  * @method disablePreviousButton
+  */
+  disablePreviousButton = function disablePreviousButton() {
+    prevButton.addClass('disabled');
+  },
+
+  /*
+  * Enables the next button
+  * @method enableNextButton
+  */
+  enableNextButton = function enableNextButton() {
+    nextButton.removeClass('disabled');
+  },
+
+  /*
+  * Disables the next button
+  * @method disableNextButton
+  */
+  disableNextButton = function disableNextButton() {
+    nextButton.addClass('disabled');
   };
 
 
@@ -93,6 +125,10 @@ Viewer.App.Navigation = (function (options) {
 **********************/
 
   return {
-    resize: resize
+    resize: resize,
+    enablePreviousButton: enablePreviousButton,
+    disablePreviousButton: disablePreviousButton,
+    enableNextButton: enableNextButton,
+    disableNextButton: disableNextButton
   };
 });

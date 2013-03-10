@@ -25,5 +25,10 @@ $navigation_button_height: 100px;
     &.next {
       right: 0;
     }
+
+    &.disabled {
+      pointer-events: none;
+      @include opacity(0.2);
+    }
   }
 }
