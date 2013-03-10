@@ -69,13 +69,25 @@ Viewer.App.GalleryItem = (function (options) {
     $(view).width(window.innerWidth);
   },
 
+  /*
+  * Resets the photo transitions
+  * @method resetAnimations
+  */
+  resetAnimations = function resetAnimations() {
+    log('reset: ' + id);
+    TweenLite.killTweensOf($(photoItem));
+    TweenLite.set($(photoItem), {scale: 1});
+  },
 
+  /*
+  * Prepares the photo instance for the 'show' transition
+  * @method prepareAnimations
+  */
+  prepareAnimations = function prepareAnimations() {
+    TweenLite.killTweensOf($(photoItem));
+    TweenLite.set($(photoItem), {scale: Viewer.App.GalleryItem.LARGE_PHOTO_SCALE});
 
-
-
-
-  reset = function reset() {
-    TweenLite.set($(photoItem), {scale: Viewer.App.GalleryItem.RESET_PHOTO_SCALE});
+    return this;
   },
 
   /*
@@ -83,16 +95,18 @@ Viewer.App.GalleryItem = (function (options) {
   * @method show
   */
   show = function show() {
-
-    // TODO = Check for hardware accelleration options and graceful degradation (I am not sure at this stage if the Greensock engine has fallback)
-    TweenLite.to($(photoItem), 6, {scale: 1, ease: Expo.easeOut, transformOrigin: 'center center'});
+    log('show: ' + id);
+    TweenLite.killTweensOf($(photoItem));
+    TweenLite.to($(photoItem), 12, {scale: 1, ease: Expo.easeOut, transformOrigin: 'center center'});
   };
+
+
 
 /*****************************************
  * Public static fields
 **********************/
 
-  Viewer.App.GalleryItem.RESET_PHOTO_SCALE = 1.05;
+  Viewer.App.GalleryItem.LARGE_PHOTO_SCALE = 1.4;
 
 
 
@@ -102,7 +116,8 @@ Viewer.App.GalleryItem = (function (options) {
 
   return {
     resize: resize,
-    reset: reset,
+    reset: resetAnimations,
+    prepare: prepareAnimations,
     show: show
   };
 });

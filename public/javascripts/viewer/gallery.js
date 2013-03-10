@@ -27,8 +27,10 @@ Viewer.App.Gallery = (function (options) {
       view,
       galleryItems = [],
       events = Viewer.App.EventAggregator,
+      prevActiveIndex = null,
       activeItemIndex = 0,
       maxItems,
+      slideTransition = null,
 
 
 
@@ -45,16 +47,22 @@ Viewer.App.Gallery = (function (options) {
     
     // TODO make it work dynamically with the window width
     // And obviously the gallery items need to be reset at some point for keeping consistency in the transitions
+    var destPosX = - activeItemIndex * window.innerWidth;
     
     // Slides the gallery
-    TweenLite.to(view, 1.2, {x: - activeItemIndex * window.innerWidth, ease: Expo.easeOut, onComplete: zoomOutActivePhoto});
-    
+    slideTransition = TweenLite.to(view, 0.6, {x: destPosX, ease: Expo.easeOut});
+
     // Activates the gallery item instance
-    galleryItems[activeItemIndex].reset();
+    galleryItems[activeItemIndex].prepare().show();
   },
 
-  zoomOutActivePhoto = function zoomOutActivePhoto() {
-    galleryItems[activeItemIndex].show();
+  /*
+  * Resets the current photo before starting to animate the 'new' active one
+  * @method resetCurrentPhoto
+  * @private
+  */
+  resetCurrentPhoto = function resetCurrentPhoto() {
+    galleryItems[prevActiveIndex].reset();
   },
 
 
@@ -108,7 +116,9 @@ Viewer.App.Gallery = (function (options) {
   */
   showPrevious = function showPrevious() {
     if (activeItemIndex > 0) {
+      prevActiveIndex = activeItemIndex;
       activeItemIndex --;
+      resetCurrentPhoto();
       slideToActivePhoto();
 
       if (activeItemIndex === 0) {
@@ -125,7 +135,9 @@ Viewer.App.Gallery = (function (options) {
   */
   showNext = function showNext() {
     if (activeItemIndex < maxItems - 1) {
+      prevActiveIndex = activeItemIndex;
       activeItemIndex ++;
+      resetCurrentPhoto();
       slideToActivePhoto();
 
       if (activeItemIndex === maxItems - 1){
