@@ -12,9 +12,18 @@
     background-image: url('/images/background-pattern.png');
   }
 
+  .gallery_shadow {
+    @extend .expanded;
+    @include box-shadow(rgba(0, 0, 0, 0.7) 0 0 6em inset);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
   .gallery_images {
     @extend .reset_box;
-
     position: absolute;
     z-index: 0;
     display: inline;

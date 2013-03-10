@@ -349,7 +349,7 @@ html {
 
 /* EXTENDS */
 /* line 31, ../stylesheets-sass/_reset.scss */
-.expanded, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_images li, .gallery_container .gallery_images li .image {
+.expanded, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_shadow, .gallery_container .gallery_images li, .gallery_container .gallery_images li .image {
   width: 100%;
   height: 100%;
 }
@@ -2002,6 +2002,17 @@ ul.icons li [class*=" icon-"] {
   background-image: url("/images/background-pattern.png");
 }
 /* line 15, ../stylesheets-sass/_gallery.scss */
+.gallery_container .gallery_shadow {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 0 6em inset;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+/* line 25, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images {
   position: absolute;
   z-index: 0;
@@ -2010,13 +2021,13 @@ ul.icons li [class*=" icon-"] {
   height: 100%;
   list-style: none;
 }
-/* line 25, ../stylesheets-sass/_gallery.scss */
+/* line 34, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li {
   position: relative;
   display: inline-block;
   float: left;
 }
-/* line 31, ../stylesheets-sass/_gallery.scss */
+/* line 40, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .image {
   position: relative;
   display: block;
@@ -2024,7 +2035,7 @@ ul.icons li [class*=" icon-"] {
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 41, ../stylesheets-sass/_gallery.scss */
+/* line 50, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .details_container {
   text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 0;
   position: absolute;
