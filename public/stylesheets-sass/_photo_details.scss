@@ -1,3 +1,19 @@
 .detail_block {
   position: relative;
+  display: block;
+
+  h2, p {
+    display: inline-block;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  h2 {
+    padding: 0.6em 0.3em 0.2em 0.3em;
+    font-size: 1.125em;
+  }
+  p {
+    padding: 0.3em 0.6em 0.2em 0.5em;
+    font-size: 0.7em;
+  }
 }

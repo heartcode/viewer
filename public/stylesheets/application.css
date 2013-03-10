@@ -2028,8 +2028,8 @@ ul.icons li [class*=" icon-"] {
 .gallery_container .gallery_images li .details_container {
   text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 0;
   position: absolute;
-  bottom: 0;
-  left: 4em;
+  bottom: 4em;
+  left: 3em;
   z-index: 2;
   color: #efefef;
   font-size: 1.4em;
@@ -2038,6 +2038,23 @@ ul.icons li [class*=" icon-"] {
 /* line 1, ../stylesheets-sass/_photo_details.scss */
 .detail_block {
   position: relative;
+  display: block;
+}
+/* line 5, ../stylesheets-sass/_photo_details.scss */
+.detail_block h2, .detail_block p {
+  display: inline-block;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 11, ../stylesheets-sass/_photo_details.scss */
+.detail_block h2 {
+  padding: 0.6em 0.3em 0.2em 0.3em;
+  font-size: 1.125em;
+}
+/* line 15, ../stylesheets-sass/_photo_details.scss */
+.detail_block p {
+  padding: 0.3em 0.6em 0.2em 0.5em;
+  font-size: 0.7em;
 }
 
 /* line 4, ../stylesheets-sass/_navigation.scss */

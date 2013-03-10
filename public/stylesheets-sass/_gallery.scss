@@ -41,8 +41,8 @@
       .details_container {
         @include text-shadow(rgba(#000, 0.4) 2px 2px 0);
         position: absolute;
-        bottom: 0;
-        left: 4em;
+        bottom: 4em;
+        left: 3em;
         z-index: 2;
         color: $app_font_color;
         font-size: 1.4em;
