@@ -349,7 +349,7 @@ html {
 
 /* EXTENDS */
 /* line 31, ../stylesheets-sass/_reset.scss */
-.expanded, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_shadow, .gallery_container .gallery_images li, .gallery_container .gallery_images li .image {
+.expanded, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_shadow, .gallery_container .gallery_images li, .gallery_container .gallery_images li .image, .viewer_navigation .button .hit_area, .viewer_navigation .button .gfx {
   width: 100%;
   height: 100%;
 }
@@ -361,7 +361,7 @@ html {
 }
 
 /* line 39, ../stylesheets-sass/_reset.scss */
-.backface_invisible, .hardware_accellerated, .gallery_container .gallery_images li .image, .gallery_container .gallery_images li .details_container, .detail_block {
+.backface_invisible, .hardware_accellerated, .gallery_container .gallery_images li .image, .gallery_container .gallery_images li .details_container, .detail_block, .viewer_navigation .button .gfx {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -2038,7 +2038,7 @@ ul.icons li [class*=" icon-"] {
 /* line 50, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .details_container {
   position: absolute;
-  bottom: 4em;
+  bottom: 3em;
   left: 3em;
   z-index: 2;
   color: #efefef;
@@ -2056,16 +2056,29 @@ ul.icons li [class*=" icon-"] {
   display: inline-block;
   margin: 0;
   background: rgba(0, 0, 0, 0.5);
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
-/* line 12, ../stylesheets-sass/_photo_details.scss */
+/* line 14, ../stylesheets-sass/_photo_details.scss */
 .detail_block h2 {
   padding: 0.6em 0.3em 0.2em 0.3em;
   font-size: 1.125em;
 }
-/* line 16, ../stylesheets-sass/_photo_details.scss */
+/* line 19, ../stylesheets-sass/_photo_details.scss */
 .detail_block p {
   padding: 0.3em 0.6em 0.2em 0.5em;
   font-size: 0.7em;
+}
+
+/* line 27, ../stylesheets-sass/_photo_details.scss */
+.details_container:hover .detail_block h2, .details_container:hover .detail_block p {
+  background: black;
 }
 
 /* line 4, ../stylesheets-sass/_navigation.scss */
@@ -2074,30 +2087,105 @@ ul.icons li [class*=" icon-"] {
   top: 50%;
   left: 0;
   z-index: 3;
-  margin-top: -50px;
-  min-height: 100px;
+  margin-top: -37.5px;
+  min-height: 75px;
   width: 100%;
-  font-size: 6em;
+  font-size: 4.5em;
   pointer-events: none;
 }
 /* line 15, ../stylesheets-sass/_navigation.scss */
 .viewer_navigation .button {
-  text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
   position: absolute;
   display: block;
-  width: 75px;
-  height: 100px;
-  text-align: center;
+  width: 70px;
+  height: 75px;
+  pointer-events: none;
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 100;
+  -webkit-perspective-origin-x: 50%;
+  -webkit-perspective-origin-y: 50%;
+}
+/* line 26, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button .hit_area {
+  position: absolute;
   cursor: pointer;
   pointer-events: auto;
 }
-/* line 25, ../stylesheets-sass/_navigation.scss */
-.viewer_navigation .button.next {
-  right: 0;
+/* line 33, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button .gfx {
+  -webkit-transition-property: -webkit-transform, text-indent, background-color, color, text-shadow;
+  -moz-transition-property: -moz-transform, text-indent, background-color, color, text-shadow;
+  -o-transition-property: -o-transform, text-indent, background-color, color, text-shadow;
+  transition-property: transform text-indent background-color color text-shadow;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
 }
-/* line 29, ../stylesheets-sass/_navigation.scss */
+/* line 45, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.next {
+  right: -20px;
+}
+/* line 48, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.next .gfx {
+  -webkit-transform: rotateY(-10deg) translateX(-10px) scale(1);
+  -moz-transform: rotateY(-10deg) translateX(-10px) scale(1);
+  -ms-transform: rotateY(-10deg) translateX(-10px) scale(1);
+  -o-transform: rotateY(-10deg) translateX(-10px) scale(1);
+  transform: rotateY(-10deg) translateX(-10px) scale(1);
+  text-indent: -5px;
+}
+/* line 53, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.next:not(.disabled):hover .gfx {
+  -webkit-transform: rotateY(0deg) translateX(-15px) scale(1.05);
+  -moz-transform: rotateY(0deg) translateX(-15px) scale(1.05);
+  -ms-transform: rotateY(0deg) translateX(-15px) scale(1.05);
+  -o-transform: rotateY(0deg) translateX(-15px) scale(1.05);
+  transform: rotateY(0deg) translateX(-15px) scale(1.05);
+}
+/* line 58, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.previous {
+  left: -20px;
+}
+/* line 61, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.previous .gfx {
+  -webkit-transform: rotateY(10deg) translateX(10px) scale(1);
+  -moz-transform: rotateY(10deg) translateX(10px) scale(1);
+  -ms-transform: rotateY(10deg) translateX(10px) scale(1);
+  -o-transform: rotateY(10deg) translateX(10px) scale(1);
+  transform: rotateY(10deg) translateX(10px) scale(1);
+  text-indent: 5px;
+}
+/* line 66, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.previous:not(.disabled):hover .gfx {
+  -webkit-transform: rotateY(0deg) translateX(15px) scale(1.05);
+  -moz-transform: rotateY(0deg) translateX(15px) scale(1.05);
+  -ms-transform: rotateY(0deg) translateX(15px) scale(1.05);
+  -o-transform: rotateY(0deg) translateX(15px) scale(1.05);
+  transform: rotateY(0deg) translateX(15px) scale(1.05);
+}
+/* line 71, ../stylesheets-sass/_navigation.scss */
 .viewer_navigation .button.disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
   pointer-events: none;
+}
+/* line 75, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button.disabled .hit_area {
+  cursor: default;
+}
+/* line 81, ../stylesheets-sass/_navigation.scss */
+.viewer_navigation .button:not(.disabled):hover .gfx {
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px;
+  background: black;
+  color: #fff;
+  text-indent: 0;
 }

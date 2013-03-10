@@ -1,5 +1,5 @@
-$navigation_button_width: 75px;
-$navigation_button_height: 100px;
+$navigation_button_width: 70px;
+$navigation_button_height: 75px;
 
 .viewer_navigation {
   position: absolute;
@@ -9,26 +9,81 @@ $navigation_button_height: 100px;
   margin-top: - $navigation_button_height * 0.5;
   min-height: $navigation_button_height;
   width: 100%;
-  font-size: 6em;
+  font-size: 4.5em;
   pointer-events: none;
 
   .button {
-    @include text-shadow(rgba(#000, 0.3) 2px 2px 2px);
     position: absolute;
     display: block;
     width: $navigation_button_width;
     height: $navigation_button_height;
-    text-align: center;
-    cursor: pointer;
-    pointer-events: auto;
-
-    &.next {
-      right: 0;
+    pointer-events: none;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 100;
+    -webkit-perspective-origin-x: 50%;
+    -webkit-perspective-origin-y: 50%;
+    
+    .hit_area {
+      @extend .expanded;
+      position: absolute;
+      cursor: pointer;
+      pointer-events: auto;
     }
 
+    .gfx {
+      @extend .backface_invisible;
+      @extend .expanded;
+      @include transition-property(transform text-indent background-color color text-shadow);
+      @include transition-duration(0.5s);
+      @include transition-timing-function($easeOutExpo);
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      @include text-shadow(rgba(#000, 0.6) 2px 2px 2px);
+    }
+
+    &.next {
+      right: -20px;
+
+      .gfx {
+        @include transform(rotateY(-10deg) translateX(-10px) scale(1));
+        text-indent: -5px;
+      }
+      &:not(.disabled):hover {
+        .gfx {
+          @include transform(rotateY(0deg) translateX(-15px) scale(1.05));
+        }
+      }
+    }
+    &.previous {
+      left: -20px;
+
+      .gfx {
+        @include transform(rotateY(10deg) translateX(10px) scale(1));
+        text-indent: 5px;
+      }
+      &:not(.disabled):hover {
+        .gfx {
+          @include transform(rotateY(0deg) translateX(15px) scale(1.05));
+        }
+      }
+    }
     &.disabled {
       @include opacity(0.2);
       pointer-events: none;
+
+      .hit_area {
+        cursor: default;
+      }
+    }
+    
+    &:not(.disabled):hover {
+      .gfx {
+        @include text-shadow(rgba(#000, 0.1) 2px 2px 2px);
+        background: rgba(0, 0, 0, 1);
+        color: #fff;
+        text-indent: 0;
+      }
     }
   }
 }

@@ -7,14 +7,25 @@
     display: inline-block;
     margin: 0;
     background: rgba(0, 0, 0, 0.5);
+    @include transition-property(background);
+    @include transition-duration(0.2s);
   }
 
   h2 {
     padding: 0.6em 0.3em 0.2em 0.3em;
     font-size: 1.125em;
   }
+
   p {
     padding: 0.3em 0.6em 0.2em 0.5em;
     font-size: 0.7em;
+  }
+}
+
+.details_container:hover {
+  .detail_block {
+    h2, p {
+      background: rgba(0, 0, 0, 1);
+    }
   }
 }

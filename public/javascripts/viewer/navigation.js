@@ -23,7 +23,7 @@ Viewer.App.Navigation = (function (options) {
 
   var container = options.container,
       name = 'navigation',
-      template = '<div class="viewer_navigation"><div class="button previous"><i class="icon-angle-left"></i></div><div class="button next"><i class="icon-angle-right"></i></div></div>',
+      template = '<div class="viewer_navigation"><div class="button previous"><div class="gfx"><i class="icon-angle-left"></i></div><div class="hit_area"></div></div><div class="button next"><div class="gfx"><i class="icon-angle-right"></i></div><div class="hit_area"></div></div>',
       nextButton,
       prevButton,
       view,
