@@ -24,8 +24,8 @@
   &.number_block {
     position: absolute;
     width: 120px;
-    height: 76px;
-    font-size: 1.8em;
+    height: 77px;
+    font-size: 1.125em;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
     @include transition-property(background);
@@ -33,7 +33,11 @@
 
     span {
       display: inline-block;
-      margin: 34px 0 0 0;
+      margin: 30px 0 0 0;
+
+      &:nth-child(2) {
+        margin: 0 4px;
+      }
     }
 
     overflow: hidden;
@@ -45,7 +49,7 @@
   }
 
   &.location_block {
-    margin-left: 121px;
+    margin: 1px 0 0 121px;
   }
 }
 

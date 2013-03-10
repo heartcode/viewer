@@ -9,7 +9,7 @@
     @extend .expanded;
     position: absolute;
     z-index: 1;
-    background-image: url('/images/background-pattern.png');
+    background-image: image-url('background-pattern.png');
   }
 
   .gallery_shadow {
