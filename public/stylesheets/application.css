@@ -138,7 +138,7 @@ code,
 kbd,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 
@@ -235,7 +235,7 @@ form {
 
 /* line 364, ../stylesheets-sass/vendor/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -322,17 +322,19 @@ table {
 
 /* VARIABLES */
 @font-face {
-  font-family: "Prime Light";
-  src: url(/fonts/Prime%20Light.eot);
-  src: url(/fonts/Prime%20Light.eot?#iefix) format('eot'), url(/fonts/Prime%20Light.woff) format('woff'), url(/fonts/Prime%20Light.ttf) format('truetype'), url(/fonts/Prime%20Light.svg#svgFontName) format('svg'), url(/fonts/Prime%20Light.eot?#iefix) format('embedded-opentype');
+  font-family: 'Prime Light';
+  src: url("../fonts/Prime%20Light.eot");
+  src: url("../fonts/Prime%20Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Prime%20Light.woff") format("woff"), url("../fonts/Prime%20Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* RESETS */
-/* line 17, ../stylesheets-sass/_reset.scss */
+/* line 25, ../stylesheets-sass/_reset.scss */
 body, html {
   background-color: #333333;
   color: #efefef;
-  font-family: "Prime Light", Verdana, Arial sans-serif;
+  font-family: 'Prime Light', Verdana, Arial sans-serif;
 }
 
 /* TYPOGRAPHIC RYTHM */
@@ -348,19 +350,19 @@ html {
 }
 
 /* EXTENDS */
-/* line 31, ../stylesheets-sass/_reset.scss */
+/* line 39, ../stylesheets-sass/_reset.scss */
 .expanded, .gallery_container, .gallery_container .top_pattern, .gallery_container .gallery_shadow, .gallery_container .gallery_images li, .gallery_container .gallery_images li .image, .viewer_navigation .button .hit_area, .viewer_navigation .button .gfx {
   width: 100%;
   height: 100%;
 }
 
-/* line 35, ../stylesheets-sass/_reset.scss */
+/* line 43, ../stylesheets-sass/_reset.scss */
 .reset_box, .gallery_container .gallery_images {
   margin: 0;
   padding: 0;
 }
 
-/* line 39, ../stylesheets-sass/_reset.scss */
+/* line 47, ../stylesheets-sass/_reset.scss */
 .backface_invisible, .hardware_accellerated, .gallery_container .gallery_images li .image, .gallery_container .gallery_images li .details_container, .detail_block, .viewer_navigation .button .gfx {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -369,7 +371,7 @@ html {
   backface-visibility: hidden;
 }
 
-/* line 42, ../stylesheets-sass/_reset.scss */
+/* line 50, ../stylesheets-sass/_reset.scss */
 .hardware_accellerated, .gallery_container .gallery_images li .image, .gallery_container .gallery_images li .details_container, .detail_block {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -545,7 +547,7 @@ ul.icons li [class*=" icon-"] {
 /* line 150, ../stylesheets-sass/vendor/_font-awesome.scss */
 .icon-border {
   border: solid 1px #eeeeee;
-  padding: 0.2em 0.25em 0.15em;
+  padding: .2em .25em .15em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
