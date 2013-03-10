@@ -9,7 +9,7 @@
   *
 */
 
-/*global Utils log $ Viewer*/
+/*global Utils log $ Viewer TweenLite Expo*/
 
 Utils.namespace('Viewer.App.Gallery');
 Viewer.App.Gallery = (function (options) {
@@ -29,7 +29,6 @@ Viewer.App.Gallery = (function (options) {
       events = Viewer.App.EventAggregator,
       activeItemIndex = 0,
       maxItems,
-      lastItemIndex,
 
 
 
@@ -37,6 +36,26 @@ Viewer.App.Gallery = (function (options) {
  * Private methods
 **********************/
 
+  /*
+  * Slides the gallery to the active photo
+  * @method slideToActivePhoto
+  * @private
+  */
+  slideToActivePhoto = function slideToActivePhoto() {
+    
+    // TODO make it work dynamically with the window width
+    // And obviously the gallery items need to be reset at some point for keeping consistency in the transitions
+    
+    // Slides the gallery
+    TweenLite.to(view, 1.2, {x: - activeItemIndex * window.innerWidth, ease: Expo.easeOut, onComplete: zoomOutActivePhoto});
+    
+    // Activates the gallery item instance
+    galleryItems[activeItemIndex].reset();
+  },
+
+  zoomOutActivePhoto = function zoomOutActivePhoto() {
+    galleryItems[activeItemIndex].show();
+  },
 
 
 /*****************************************
@@ -52,9 +71,8 @@ Viewer.App.Gallery = (function (options) {
     view = $(template).appendTo(container);
 
     // Creates each gallery item using the details found in the loaded data file
-    maxItems = data.maxPhotos;
-    lastItemIndex = maxItems && maxItems < data.photos.length - 1 ? maxItems - 1 : data.photos.length - 1;
-    for(var i = 0; i <= lastItemIndex; i++) {
+    maxItems = data.maxPhotos && data.maxPhotos > 1 && data.maxPhotos <= data.photos.length ? data.maxPhotos : data.photos.length;
+    for(var i = 0; i < maxItems; i++) {
       var photoData = data.photos[i],
           photoURL = data.imageBaseURL + data.photoFolder + photoData.photo,
           photoDetails = {
@@ -91,7 +109,8 @@ Viewer.App.Gallery = (function (options) {
   showPrevious = function showPrevious() {
     if (activeItemIndex > 0) {
       activeItemIndex --;
-      
+      slideToActivePhoto();
+
       if (activeItemIndex === 0) {
         events.trigger(Viewer.App.Gallery.Events.FIRST_ITEM_SHOWN);
       } else {
@@ -105,10 +124,11 @@ Viewer.App.Gallery = (function (options) {
   * @method showNext
   */
   showNext = function showNext() {
-    if (activeItemIndex < lastItemIndex) {
+    if (activeItemIndex < maxItems - 1) {
       activeItemIndex ++;
-      
-      if (activeItemIndex === lastItemIndex){
+      slideToActivePhoto();
+
+      if (activeItemIndex === maxItems - 1){
         events.trigger(Viewer.App.Gallery.Events.LAST_ITEM_SHOWN);
       }
       else {

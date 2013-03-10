@@ -15,7 +15,6 @@
   .gallery_images {
     @extend .reset_box;
 
-    @extend .hardware_accellerated;
     position: absolute;
     z-index: 0;
     display: inline;
@@ -30,6 +29,7 @@
       float: left;
 
       .image {
+        @extend .hardware_accellerated;
         @extend .expanded;
         position: relative;
         display: block;

@@ -9,7 +9,7 @@
   *
 */
 
-/*global Utils log $ Viewer Handlebars*/
+/*global Utils log $ Viewer Handlebars TweenLite Expo*/
 
 Utils.namespace('Viewer.App.GalleryItem');
 Viewer.App.GalleryItem = (function (options) {
@@ -67,7 +67,32 @@ Viewer.App.GalleryItem = (function (options) {
   */
   resize = function resize(){
     $(view).width(window.innerWidth);
+  },
+
+
+
+
+
+
+  reset = function reset() {
+    TweenLite.set($(photoItem), {scale: Viewer.App.GalleryItem.RESET_PHOTO_SCALE});
+  },
+
+  /*
+  * Applies a smooth scaling animation on the photo instance
+  * @method show
+  */
+  show = function show() {
+
+    // TODO = Check for hardware accelleration options and graceful degradation (I am not sure at this stage if the Greensock engine has fallback)
+    TweenLite.to($(photoItem), 6, {scale: 1, ease: Expo.easeOut, transformOrigin: 'center center'});
   };
+
+/*****************************************
+ * Public static fields
+**********************/
+
+  Viewer.App.GalleryItem.RESET_PHOTO_SCALE = 1.05;
 
 
 
@@ -76,6 +101,8 @@ Viewer.App.GalleryItem = (function (options) {
 **********************/
 
   return {
-    resize: resize
+    resize: resize,
+    reset: reset,
+    show: show
   };
 });

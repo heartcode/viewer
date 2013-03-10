@@ -361,7 +361,7 @@ html {
 }
 
 /* line 39, ../stylesheets-sass/_reset.scss */
-.backface_invisible, .hardware_accellerated, .gallery_container .gallery_images {
+.backface_invisible, .hardware_accellerated, .gallery_container .gallery_images li .image {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -370,7 +370,7 @@ html {
 }
 
 /* line 42, ../stylesheets-sass/_reset.scss */
-.hardware_accellerated, .gallery_container .gallery_images {
+.hardware_accellerated, .gallery_container .gallery_images li .image {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -2010,13 +2010,13 @@ ul.icons li [class*=" icon-"] {
   height: 100%;
   list-style: none;
 }
-/* line 26, ../stylesheets-sass/_gallery.scss */
+/* line 25, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li {
   position: relative;
   display: inline-block;
   float: left;
 }
-/* line 32, ../stylesheets-sass/_gallery.scss */
+/* line 31, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .image {
   position: relative;
   display: block;
