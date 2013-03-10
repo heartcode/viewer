@@ -107,6 +107,9 @@ Viewer.App.Gallery = (function (options) {
     for (var i = 0; i < galleryItems.length; i++) {
       galleryItems[i].resize();
     }
+
+    // Correcting the positioning differences caused by the resize
+    slideToActivePhoto();
   },
 
 
