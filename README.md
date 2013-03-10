@@ -26,6 +26,12 @@ Image viewer using JavaScript and the Flickr API
 
 To be able to work more comfortably with the project (using styling mixins for instance), I set up a static Rack server instance, and added some gems to help along the way.
 
+###Install the required gems
+The project uses some excellent Ruby gems (the full list can be found in the Gemfile)
+
+	$ gem install bundle
+	$ bundle install
+
 ###Run the rack server using Pow
 The fastest way to run the app is to use [Pow](http://pow.cx/) and [Powify](https://github.com/sethvargo/powify).
 
