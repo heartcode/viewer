@@ -5,7 +5,7 @@
   "photos":
   [
     {
-      "title": "Composition",
+      "title": "A new piece of art",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "composed.jpg"
     },
@@ -15,37 +15,37 @@
       "photo": "crane.jpg"
     },
     {
-      "title": "That's cute",
+      "title": "Badger Badger Badger",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "cute.jpg"
     },
     {
-      "title": "Look in the eye",
+      "title": "The eyes of thruth",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "eye.jpg"
     },
     {
-      "title": "Look at me",
+      "title": "The eyes of thruth #2",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "look_at_me.jpg"
     },
     {
-      "title": "That's all around Shoreditch",
+      "title": "A piece of Shoreditch",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "grin.jpg"
     },
     {
-      "title": "Cool birds have cool hair",
+      "title": "Cool rocker bird",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "hello.jpg"
     },
     {
-      "title": "Monkey",
+      "title": "American (mag)pie",
       "location": "London, Redchurch Street",
       "photo": "monkey.jpg"
     },
     {
-      "title": "Around the corner",
+      "title": "Colorful corner",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "parrot.jpg"
     },
@@ -55,17 +55,17 @@
       "photo": "problems.jpg"
     },
     {
-      "title": "Psssssst",
+      "title": "Shhhhhhhhhhhhhhh",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "psst.jpg"
     },
     {
-      "title": "Shout out loud!",
+      "title": "Another piece of Shoreditch",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "shout.jpg"
     },
     {
-      "title": "Cute smile",
+      "title": "Smiling at you",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "smile.jpg"
     },
@@ -75,19 +75,19 @@
       "photo": "spill.jpg"
     },
     {
-      "title": "Hello beautiful",
+      "title": "That is IT!",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "teeth.jpg"
+    },
+    {
+      "title": "The grin of insanity",
+      "location": "London, Brick Lane + Hanbury Street",
+      "photo": "wide_mouth.jpg"
     },
     {
       "title": "The big picture",
       "location": "London, Brick Lane + Hanbury Street",
       "photo": "the_big_picture.jpg"
-    },
-    {
-      "title": "Arkhem",
-      "location": "London, Brick Lane + Hanbury Street",
-      "photo": "wide_mouth.jpg"
     }
   ]
 }
