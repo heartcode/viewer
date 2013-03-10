@@ -2001,7 +2001,7 @@ ul.icons li [class*=" icon-"] {
 .gallery_container .top_pattern {
   position: absolute;
   z-index: 1;
-  background-image: url('../images/background-pattern.png?1362955135');
+  background-image: url('../images/background-pattern.png?1362957681');
 }
 /* line 15, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_shadow {
@@ -2040,7 +2040,7 @@ ul.icons li [class*=" icon-"] {
 /* line 50, ../stylesheets-sass/_gallery.scss */
 .gallery_container .gallery_images li .details_container {
   position: absolute;
-  bottom: 3em;
+  bottom: 2.7em;
   left: 3em;
   z-index: 2;
   color: #efefef;
